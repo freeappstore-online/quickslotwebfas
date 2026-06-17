@@ -1,0 +1,15 @@
+{
+  "name": "quickslotwebfas",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "engines": { "node": ">=22" },
+  "pnpm": { "onlyBuiltDependencies": ["esbuild"] },
+  "repository": { "type": "git", "url": "git+https://github.com/freeappstore-online/quickslotwebfas.git" },
+  "scripts": {
+    "dev": "pnpm --filter @quickslotwebfas/web dev",
+    "build": "pnpm --filter @quickslotwebfas/web build",
+    "preview": "pnpm --filter @quickslotwebfas/web preview",
+    "typecheck": "pnpm --filter @quickslotwebfas/web exec tsc -b",
+    "test": "pnpm --filter @quickslotwebfas/web exec tsc -b"
+  }
+}

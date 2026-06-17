@@ -1,18 +1,20 @@
-import { initApp } from '@freeappstore/sdk'
-import { Shell, BuildInfo } from '@freeappstore/sdk/ui'
-
-const fas = initApp({ appId: 'quickslotwebfas' })
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/home/HomePage';
+import SlotsPage from './pages/slots/SlotsPage';
+import BookPage from './pages/book/BookPage';
+import MyBookingsPage from './pages/my-bookings/MyBookingsPage';
+import ThemeToggle from './components/ThemeSwitcher';
 
 export default function App() {
   return (
-    <Shell app={fas} appName="quickslotwebfas">
-      <div className="flex flex-1 items-center justify-center">
-        <div className="text-center">
-          <h1 className="display-font text-3xl font-bold text-[var(--ink)]">quickslotwebfas</h1>
-          <p className="mt-3 text-[var(--muted)]">Edit <code>web/src/App.tsx</code> to start building.</p>
-        </div>
-      </div>
-      <BuildInfo />
-    </Shell>
-  )
+    <>
+      <ThemeToggle />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/slots" element={<SlotsPage />} />
+        <Route path="/book" element={<BookPage />} />
+        <Route path="/my-bookings" element={<MyBookingsPage />} />
+      </Routes>
+    </>
+  );
 }
